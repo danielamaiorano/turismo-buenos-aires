@@ -1,0 +1,88 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+section {
+    padding: 20px;
+}
+
+/* Add the UV styles
+:root {
+    --uv-styles-color-outline: #3c4043;
+    --uv-styles-color-scrim: #0009;
+    --uv-styles-color-on-scrim: #fff;
+    --uv-styles-color-icon-on-scrim: #fff;
+    --uv-styles-color-primary: #8ab4f8;
+    --uv-styles-color-on-primary: #202124;
+    --uv-styles-color-secondary: #394457;
+    --uv-styles-color-icon-on-secondary: #9aa0a6;
+    --uv-styles-color-on-secondary: #d2e3fc;
+    --uv-styles-color-tertiary: #303134;
+    --uv-styles-color-on-tertiary: #bdc1c6;
+    --uv-styles-color-icon-on-tertiary: #bdc1c6;
+    --uv-styles-color-text-primary: #8ab4f8;
+    --uv-styles-color-text-emphasis: #e8eaed;
+    --uv-styles-color-icon-emphasis: #e8eaed;
+    --uv-styles-color-text-de-emphasis: #9aa0a6;
+    --uv-styles-color-text-default: #bdc1c6;
+    --uv-styles-color-icon-default: #bdc1c6;
+    --uv-styles-color-review-stars: #fdd663;
+    --uv-styles-color-review-stars-empty: #80868b;
+    --uv-styles-color-letterbox: #000;
+    --uv-styles-color-surface: #171717;
+    --uv-styles-color-footer: #171717;
+    --lens-title1-font-size: calc(18/var(--lens-base-font-size, 16)*1rem);
+    --lens-title2-font-size: calc(16/var(--lens-base-font-size, 16)*1rem);
+    --lens-title3-font-size: calc(14/var(--lens-base-font-size, 16)*1rem);
+    --lens-subtitle1-font-size: calc(14/var(--lens-base-font-size, 16)*1rem);
+    --lens-body1-font-size: calc(14/var(--lens-base-font-size, 16)*1rem);
+    color-scheme: dark;
+    font-size: 14px;
+    color: #bdc1c6;
+    --center-width: 652px;
+    --rhs-margin: 76px;
+    --rhs-width: 372px;
+    --lhs-refinements-width: 0px;
+    --lhs-margin: 24px;
+    --lhs-width: calc(var(--center-abs-margin) - var(--lhs-margin) - var(--center-margin));
+    --center-margin: 24px;
+    --center-abs-margin: 28px;
+    font-family: arial,sans-serif;
+} */
+
+/* Estilos específicos para la clase "caja google" */
+.caja.google {
+    --uv-styles-color-outline: #3c4043;
+    --uv-styles-color-scrim: #0009;
+    --uv-styles-color-on-scrim: #fff;
+    --uv-styles-color-icon-on-scrim: #fff;
+    --uv-styles-color-primary: #8ab4f8;
+    --uv-styles-color-on-primary: #202124;
+    --uv-styles-color-secondary: #394457;
+    --uv-styles-color-icon-on-secondary: #9aa0a6;
+    --uv-styles-color-on-secondary: #d2e3fc;
+    --uv-styles-color-tertiary: #303134;
+    --uv-styles-color-on-tertiary: #bdc1c6;
+    --uv-styles-color-icon-on-tertiary: #bdc1c6;
+    --uv-styles-color-text-primary: #8ab4f8;
+    --uv-styles-color-text-emphasis: #e8eaed;
+    --uv-styles-color-icon-emphasis: #e8eaed;
+    --uv-styles-color-text-de-emphasis: #9aa0a6;
+    --uv-styles-color-text-default: #bdc1c6;
+    --uv-styles-color-icon-default: #bdc1c6;
+    --uv-styles-color-review-stars: #fdd663;
+    --uv-styles-color-review-stars-empty: #80868b;
+    --uv-styles-color-letterbox: #000;
+    --uv-styles-color-surface: #171717;
+    --uv-styles-color-footer: #171717;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo en Buenos Aires - Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .introduction {
+            margin-bottom: 20px;
+        }
+
+        .animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px; /* Ajustar la altura según sea necesario */
+            overflow: hidden;
+        }
+
+        .animation img {
+            max-width: 100%;
+            max-height: 100%; /* Ajusta la altura máxima de la imagen al contenedor */
+            height: auto;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .animation img.active {
+            opacity: 1;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form label {
+            text-align: left; /* Alineación a la izquierda */
+        }
+
+        form input, form select, form textarea {
+            width: 250px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        form input[type="submit"] {
+            width: auto;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function validarFormulario() {
+            var nombre = document.getElementById('nombre').value;
+            var email = document.getElementById('email').value;
+            var telefono = document.getElementById('telefono').value;
+            var motivo = document.getElementById('motivo').value;
+            var mensaje = document.getElementById('mensaje').value;
+
+            if (nombre.trim() == '') {
+                alert('Por favor, ingresa tu nombre.');
+                return false;
+            }
+
+            if (email.trim() == '') {
+                alert('Por favor, ingresa tu correo electrónico.');
+                return false;
+            }
+
+            if (telefono.trim() == '') {
+                alert('Por favor, ingresa tu número de teléfono.');
+                return false;
+            }
+
+            if (motivo.trim() == '') {
+                alert('Por favor, selecciona un motivo de contacto.');
+                return false;
+            }
+
+            if (mensaje.trim() == '') {
+                alert('Por favor, ingresa tu mensaje.');
+                return false;
+            }
+
+            return true;
+        }
+
+        // Función para animar las imágenes
+        function animateImages() {
+            var images = document.querySelectorAll('.animation img');
+            var index = 0;
+
+            setInterval(function() {
+                images[index].classList.remove('active');
+                index = (index + 1) % images.length;
+                images[index].classList.add('active');
+            }, 3000); // Cambiar la duración de la transición aquí (en milisegundos)
+        }
+
+        // Llamar a la función para iniciar la animación cuando se cargue la página
+        window.onload = function() {
+            animateImages();
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Turismo en Buenos Aires</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="san-antonio-de-areco.html">San Antonio de Areco</a></li>
+                <li><a href="la-plata.html">La Plata</a></li>
+                <li><a href="lujan.html">Luján</a></li>
+                <li><a href="delta-del-tigre.html">Delta del Tigre</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="introduction">
+            <h2>Bienvenido al turismo en Buenos Aires</h2>
+            <p>Descubre la diversidad y belleza de la provincia de Buenos Aires mientras navegamos juntos por sus encantadores destinos turísticos. ¡Explora, disfruta y sumérgete en la experiencia inolvidable que esta tierra tiene para ofrecerte!</p>
+            <p>¡Atención! Esta página está en construcción. Pronto estaremos añadiendo más contenido para tu disfrute.</p>
+        </div>
+        <div class="animation">
+            <img src="imagen_san_antonio_de_areco.jpg" alt="San Antonio de Areco" class="active">
+            <img src="imagen_la_plata.jpg" alt="La Plata">
+            <img src="imagen_lujan.jpg" alt="Luján">
+            <img src="imagen_delta_del_tigre.jpg" alt="Delta del Tigre">
+            <!-- Agrega más imágenes aquí si es necesario -->
+        </div>
+        <h2>Formulario de Contacto</h2>
+        <form onsubmit="return validarFormulario()">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <br>
+
+            <label for="motivo">Motivo de contacto:</label>
+            <select id="motivo" name="motivo" required>
+                <option value="">Selecciona un motivo</option>
+                <option value="consulta">Consulta</option>
+                <option value="reserva">Reserva</option>
+                <option value="reclamo">Reclamo</option>
+            </select>
+            <br>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+    <footer>
+        <p>Derechos de autor &copy; 2024 Turismo en Buenos Aires</p>
+    </footer>
+</body>
+</html>
