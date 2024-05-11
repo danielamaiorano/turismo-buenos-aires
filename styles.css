@@ -12,15 +12,6 @@ header, footer {
     padding: 20px;
 }
 
-header a {
-    color: white;
-
-}
-
-header a:hover{
-    color:blue;
-}
-
 section {
     padding: 20px;
 }
