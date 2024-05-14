@@ -5,79 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Antonio de Areco - Turismo en Buenos Aires</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Agregamos Font Awesome -->
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        header, footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        section {
-            flex: 1;
-            padding: 20px;
-        }
-
-        #clima-info p {
-            margin: 5px 0;
-        }
-
-        #clima-info i {
-            margin-right: 5px;
-        }
-
-        #clima-info .temperature {
-            font-size: 19px;
-            font-weight: bold;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .gallery img {
-            width: 200px;
-            margin: 10px;
-            border-radius: 5px;
-        }
-
-        .descripcion {
-            margin-top: 20px;
-        }
-    </style>
+    
 </head>
 <body>
     <header>
-        <h1>San Antonio de Areco</h1>
-        <nav>
-            <ul>
-                <li><a class="ul-btn"  href="index.html">Inicio</a></li>
-                <li><a class="ul-btn"  href="la-plata.html">La Plata</a></li>
-                <li><a class="ul-btn"  href="lujan.html">Luján</a></li>
-                <li><a class="ul-btn"  href="delta-del-tigre.html">Delta del Tigre</a></li>
-                <li><a class="ul-btn"  href="contact.html">Contacto</a></li>
-            </ul>
+        <!-- Navbar de bootstrap, 3 puntos de corte  expand-sm/md/lg-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+            <div class="container">
+            <a class="navbar-brand" href="index.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="san-antonio-de-areco.html">San Antonio de Areco</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="la-plata.html">La Plata</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lujan.html">Luján</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="delta-del-tigre.html">Delta del Tigre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contacto</a>
+                </li>
+                </ul>
+            </div>
+            </div>
         </nav>
     </header>
     <section>
@@ -103,7 +63,7 @@
         </div>
 
         <!-- Mapa de la localidad -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52767.14419878637!2d-59.462104849999996!3d-34.24990845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb9533fc84b0c1%3A0x33d6b6bd3a65b27f!2sSan%20Antonio%20de%20Areco%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1711897880956!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52767.14419878637!2d-59.462104849999996!3d-34.24990845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb9533fc84b0c1%3A0x33d6b6bd3a65b27f!2sSan%20Antonio%20de%20Areco%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1711897880956!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         <!-- Clima actual -->
         <div id="clima">
@@ -140,4 +100,10 @@
         };
     </script>
 </body>
+
+<!-- agrego librerías y CSS de bootstrap necesarias para la navbar -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </html>
