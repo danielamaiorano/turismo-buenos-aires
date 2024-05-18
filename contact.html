@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Turismo en Buenos Aires</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="./static/js/contact.js"></script>
     <style>
         body {
             display: flex;
@@ -19,57 +20,21 @@
             padding: 20px;
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
         section {
             flex: 1;
             padding: 20px;
         }
+
+        .msgError {
+            color: red;
+            font-weight: bold;
+            font-size: small;
+            display: none;
+        }
+
     </style>
     <script>
-        function validarFormulario() {
-            var nombre = document.getElementById('nombre').value;
-            var email = document.getElementById('email').value;
-            var telefono = document.getElementById('telefono').value;
-            var motivo = document.getElementById('motivo').value;
-            var mensaje = document.getElementById('mensaje').value;
-
-            if (nombre.trim() == '') {
-                alert('Por favor, ingresa tu nombre.');
-                return false;
-            }
-
-            if (email.trim() == '') {
-                alert('Por favor, ingresa tu correo electrónico.');
-                return false;
-            }
-
-            if (telefono.trim() == '') {
-                alert('Por favor, ingresa tu número de teléfono.');
-                return false;
-            }
-
-            if (motivo.trim() == '') {
-                alert('Por favor, selecciona un motivo de contacto.');
-                return false;
-            }
-
-            if (mensaje.trim() == '') {
-                alert('Por favor, ingresa tu mensaje.');
-                return false;
-            }
-
-            return true;
-        }
+        
     </script>
 </head>
 <body>
@@ -77,12 +42,11 @@
         <h1>Contacto</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="san-antonio-de-areco.html">San Antonio de Areco</a></li>
-                <li><a href="la-plata.html">La Plata</a></li>
-                <li><a href="lujan.html">Luján</a></li>
-                <li><a href="delta-del-tigre.html">Delta del Tigre</a></li>
-                <li><a href="contact.html">Contacto</a></li>
+                <li><a class="ul-btn"  href="index.html">Inicio</a></li>
+                <li><a class="ul-btn"  href="san-antonio-de-areco.html">San Antonio de Areco</a></li>
+                <li><a class="ul-btn"  href="la-plata.html">La Plata</a></li>
+                <li><a class="ul-btn"  href="lujan.html">Luján</a></li>
+                <li><a class="ul-btn"  href="delta-del-tigre.html">Delta del Tigre</a></li>
             </ul>
         </nav>
     </header>
@@ -90,28 +54,30 @@
         <h2>Formulario de Contacto</h2>
         <form onsubmit="return validarFormulario()">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" >
+            <label id="msgErrorNombre" class="msgError">* Este campo es obligatorio</label>
             <br><br>
-
             <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" >
+            <label id="msgErrorEmail" class="msgError">* Este campo es obligatorio</label>
             <br><br>
-
             <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required>
+            <input type="tel" id="telefono" name="telefono" placeholder="011-15-4567-8901" >
+            <label id="msgErrorTelefono" class="msgError">* Este campo es obligatorio</label>
             <br><br>
-
             <label for="motivo">Motivo de contacto:</label>
-            <select id="motivo" name="motivo" required>
+            <select id="motivo" name="motivo" >
                 <option value="">Selecciona un motivo</option>
                 <option value="consulta">Consulta</option>
                 <option value="reserva">Reserva</option>
                 <option value="reclamo">Reclamo</option>
             </select>
+            <label id="msgErrorMotivo" class="msgError">* Este campo es obligatorio</label>
             <br><br>
 
             <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+            <label id="msgErrorComentario" class="msgError">* Este campo es obligatorio</label>
             <br><br>
 
             <input type="submit" value="Enviar">

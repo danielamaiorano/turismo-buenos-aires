@@ -17,6 +17,15 @@
             background-color: #333;
             color: #fff;
             padding: 20px;
+            align-self: center;
+            min-width: 652px;
+            width: 100%;
+            display: flex;
+            flex-direction: column; 
+            flex-wrap: wrap;
+            align-content: center;
+            margin: 0 0 0 3vw;
+            /* box-sizing: border-box; */
         }
 
         nav ul {
@@ -24,16 +33,111 @@
             padding: 0;
             margin: 0;
             display: flex;
+            
         }
 
         nav ul li {
             margin-right: 20px;
+            padding: 7px 6px 7px 6px;
+            background-color: darkorchid;
+            align-self: center;
+            border-radius: 1px 14px 1px 15px;
         }
 
         section {
             flex: 1;
             padding: 20px;
+            align-self: center;
         }
+
+        section h2 {
+            text-align: center;
+        }
+/**/
+        .carousel {
+            position: relative;
+            width: 500px;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .trackCarouselContainer{
+            display: flex;
+            width: 900px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slideCarousel{
+            /* width: 100%;
+            height: 100%;
+            position: absolute;
+            animation: carousel 8s infinite; */
+            flex: 0 0 auto;
+            width: 500px;
+            /* list-style: none; */
+        }
+
+        .slideCarousel:nth-child(2){    
+            animation-delay: 2s;
+        }
+        .slideCarousel:nth-child(3){
+            animation-delay: 4s;
+        }
+        .slideCarousel:nth-child(4){
+            animation-delay: 6s;
+        }
+        /* @keyframes carousel {
+            0% {opacity: 0;}
+            20% {opacity: 1;}
+            40% {opacity: 0;}
+            100% {opacity: 0;}
+
+
+        } */
+        .carousel input[type="radio"] {
+            display: none;
+        }
+        .carousel input[type="radio"]:nth-child(1):checked ~ .trackCarouselContainer{
+            transform: translateX(0);
+        }
+
+        .carousel input[type="radio"]:nth-child(2):checked ~ .trackCarouselContainer{
+            transform: translateX(-500px);
+        }        
+        .carousel input[type="radio"]:nth-child(3):checked ~ .trackCarouselContainer{
+            transform: translateX(-1000px);
+        }
+        .carousel input[type="radio"]:nth-child(4):checked ~ .trackCarouselContainer{
+            transform: translateX(-1500px);
+        }
+
+        .carouselNav {
+            display: flex;
+            position: absolute;
+            bottom: 10px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+
+        .carouselNav label{
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+                .imgCarousel {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+        
+        /* .currentSlide{
+            display: block;
+        } */
     </style>
 </head>
 <body>
@@ -49,10 +153,81 @@
                 <li><a href="contact.html">Contacto</a></li>            </ul>
         </nav>
     </header>
+    <main>
     <section>
         <h2>Explora Lujan</h2>
-        <p>Información sobre Lujan...</p>
+        <div class="carousel">
+            <input type="radio" id="slide_1" name="carousel" checked=true>
+            <input type="radio" id="slide_2" name="carousel">
+            <input type="radio" id="slide_3" name="carousel">
+            <input type="radio" id="slide_4" name="carousel">
+            <div class="trackCarouselContainer">
+                <!-- <ul class="trackCarousel"> -->
+                    <div class="slideCarousel currentSlide">
+                        <img src="imagen_san_antonio_de_areco.jpg" alt="San Antonio de Areco" class="imgCarousel"><!--class="active"-->
+                    </div>
+                    <div class="slideCarousel">
+                        <img src="imagen_la_plata.jpg" alt="La Plata" class="imgCarousel">
+                    </div>
+                    <div class="slideCarousel">
+                        <img src="imagen_lujan.jpg" alt="Luján" class="imgCarousel">
+                    </div>
+                    <div class="slideCarousel">
+                        <img src="imagen_delta_del_tigre.jpg" alt="Luján" class="imgCarousel">
+                    </div>
+                <!-- </ul> -->
+            </div>
+            <div class="carouselNav">
+                <label for="slide_1" onclick="setCheckStatus(this)"></label>
+                <label for="slide_2"></label>
+                <label for="slide_3"></label>
+                <label for="slide_4"></label>
+
+            </div>        
+        </div>
     </section>
+    <section>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ducimus a molestiae nostrum provident sit obcaecati sapiente, nemo consequuntur blanditiis iste nam, officiis aspernatur? Ipsa accusantium recusandae veritatis sit facilis?
+            </p>
+        </div>
+    </section>
+    <script>
+        var carouselNav = document.querySelector(".carouselNav").children.length;
+        var slideID = "slide_";
+        setInterval(moveToNextImage, 5000);
+
+        function setCheckStatus(element){
+            //let currentID = getCarouselIdNum(element);
+            let currentRadioBtn = document.querySelector(".carousel input[type='radio'][checked=true]");
+            currentRadioBtn.removeAttribute("checked");
+            document.getElementById(element.attributes["for"].value).setAttribute('checked',true);
+        }
+
+        function moveToNextImage(){
+            let currentRadioBtn = document.querySelector(".carousel input[type='radio'][checked=true]");
+            let currentIdNum = getCarouselIdNum(currentRadioBtn);
+            let nextId = "";
+            if(currentIdNum === carouselNav){
+                nextId = slideID + 1;
+            }
+            else{
+                nextId = slideID + (currentIdNum+1);
+            }
+            let nextRadioBtn = document.getElementById(nextId);
+            currentRadioBtn.removeAttribute("checked");
+            nextRadioBtn.click();
+            nextRadioBtn.setAttribute('checked',true);
+
+            //document.querySelector(`label[for='${nextId}']`).click();
+        }
+
+        function getCarouselIdNum(element){
+            return Number(element.id.substring(element.id.indexOf("_") + 1));
+        }
+    </script>
+</main>
     <footer>
         <p>Derechos de autor &copy; 2024 Turismo en Buenos Aires</p>
     </footer>
