@@ -55,11 +55,9 @@ section {
 }
 
 /* -------- Estilo Animaciones Carrusel -------- */
-.carousel-item img {
-    width: 400px;
-    height: auto;
-    position: relative;
-}
+/* .carousel-item img {
+    height: 400px;
+} */
   
 .carousel-item img[alt]:after {
     content: attr(alt);
@@ -68,14 +66,30 @@ section {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     position: absolute;
-    top: 10px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
+    top: 10px;
+    left: 10px; 
 }
 
 .carousel-item {
-    transition-duration: 1s; /* Change slides every 2 seconds */
+    transition-duration: 1s;
 }
 
+.carousel{
+    width: 700px;
+    align-content: center; 
+}
+
+@media (400px <= width <= 750px) {
+    .carousel{
+        width: 350px;
+    }
+}
+
+@media (width <= 399px) {
+    .carousel{
+        width: 200px;
+    }
+}
 
 /* -------- Estilo Formulario -------- */
 form {
@@ -99,6 +113,9 @@ form input[type="submit"] {
     margin-top: 10px;
 }
 
+#carouselCaptions .carousel-control-next, #carouselCaptions .carousel-control-prev{
+    background-color: transparent;
+}
 
 /* Estilos generales
 body {
