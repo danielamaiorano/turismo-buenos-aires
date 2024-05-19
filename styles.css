@@ -3,8 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
 }
-
+/* old
 header, footer {
     background-color: #333;
     color: #fff;
@@ -19,6 +23,50 @@ header a {
 
 header a:hover{
     color:blue;
+}
+*/
+/*new*/
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50px;
+}
+main{
+    flex:1;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+    padding: 7px 6px 7px 6px;
+    background-color: darkslateblue;
+    align-self: center;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+
+}
+
+nav ul li:hover{
+    background-color: #333;
+}
+
+nav ul li:hover a{
+    color:aquamarine;
 }
 
 section {

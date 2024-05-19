@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="./static/js/contact.js"></script>
     <style>
-        body {
+        /* body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -18,7 +18,7 @@
             background-color: #333;
             color: #fff;
             padding: 20px;
-        }
+        } */
 
         section {
             flex: 1;
@@ -32,10 +32,21 @@
             display: none;
         }
 
+        .formWrapper {
+            display: grid;
+            gap: 2px;
+        }
+
+        .formWrapper > label{
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        .formWrapper > input[type="text"], input[type="email"], input[type="tel"]{
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
     </style>
-    <script>
-        
-    </script>
 </head>
 <body>
     <header>
@@ -47,42 +58,46 @@
                 <li><a class="ul-btn"  href="la-plata.html">La Plata</a></li>
                 <li><a class="ul-btn"  href="lujan.html">Luján</a></li>
                 <li><a class="ul-btn"  href="delta-del-tigre.html">Delta del Tigre</a></li>
+                <li><a href="contact.html">Contacto</a></li>            </ul>
             </ul>
         </nav>
     </header>
-    <section>
-        <h2>Formulario de Contacto</h2>
-        <form onsubmit="return validarFormulario()">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" >
-            <label id="msgErrorNombre" class="msgError">* Este campo es obligatorio</label>
-            <br><br>
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" >
-            <label id="msgErrorEmail" class="msgError">* Este campo es obligatorio</label>
-            <br><br>
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="011-15-4567-8901" >
-            <label id="msgErrorTelefono" class="msgError">* Este campo es obligatorio</label>
-            <br><br>
-            <label for="motivo">Motivo de contacto:</label>
-            <select id="motivo" name="motivo" >
-                <option value="">Selecciona un motivo</option>
-                <option value="consulta">Consulta</option>
-                <option value="reserva">Reserva</option>
-                <option value="reclamo">Reclamo</option>
-            </select>
-            <label id="msgErrorMotivo" class="msgError">* Este campo es obligatorio</label>
-            <br><br>
-
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
-            <label id="msgErrorComentario" class="msgError">* Este campo es obligatorio</label>
-            <br><br>
-
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
+    <main>
+        <section>
+            <h2>Formulario de Contacto</h2>
+            <form class="formWrapper" onsubmit="return validarFormulario()">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" >
+                <label id="msgErrorNombre" class="msgError">* Este campo es obligatorio</label>
+                <br><br>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" >
+                <label id="msgErrorEmail" class="msgError">* Este campo es obligatorio</label>
+                <br><br>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="011-15-4567-8901" >
+                <label id="msgErrorTelefono" class="msgError">* Este campo es obligatorio</label>
+                <br><br>
+                <label for="motivo">Motivo de contacto:</label>
+                <select id="motivo" name="motivo" >
+                    <option value="">Selecciona un motivo</option>
+                    <option value="consulta">Consulta</option>
+                    <option value="reserva">Reserva</option>
+                    <option value="reclamo">Reclamo</option>
+                </select>
+                <label id="msgErrorMotivo" class="msgError">* Este campo es obligatorio</label>
+                <br><br>
+    
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                <label id="msgErrorComentario" class="msgError">* Este campo es obligatorio</label>
+                <br><br>
+    
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+    
     <footer>
         <p>Derechos de autor &copy; 2024 Turismo en Buenos Aires</p>
     </footer>
