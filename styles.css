@@ -2,20 +2,26 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     margin: 0;
+    background-image: url(https://media.gettyimages.com/id/667138246/es/foto/argentina-buenos-aires-amanecer-en-el-centro-con-hora-punta.jpg?s=2048x2048&w=gi&k=20&c=mHncRiyTa0eFSXCuf2E6uAO6OcQzwMfNnC0TJYfmjmg=);
 }
 
 footer {
     background-color: #333;
-    color: #fff;
-    padding: 1.5rem;
+    color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50px;
 }
 
 section {
     flex: 1;
     padding: 1rem;
-    padding-top: 4rem;
+    padding-top: 5rem;
+    color: whitesmoke;
 }
 
 #clima-info p {
@@ -55,17 +61,14 @@ section {
 }
 
 /* -------- Estilo Animaciones Carrusel -------- */
-/* .carousel-item img {
-    height: 400px;
-} */
-  
+
 .carousel-item img[alt]:after {
     content: attr(alt);
     display: block;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
-    position: absolute;
+    position: center;
     top: 10px;
     left: 10px; 
 }
@@ -74,9 +77,8 @@ section {
     transition-duration: 1s;
 }
 
-.carousel{
-    width: 700px;
-    align-content: center; 
+.carousel {
+    width: 500px;
 }
 
 @media (400px <= width <= 750px) {
@@ -113,9 +115,7 @@ form input[type="submit"] {
     margin-top: 10px;
 }
 
-#carouselCaptions .carousel-control-next, #carouselCaptions .carousel-control-prev{
-    background-color: transparent;
-}
+
 
 /* Estilos generales
 body {
@@ -139,15 +139,7 @@ section {
     padding: 20px;
 } */
 
-header, footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 50px;
-}
+
 main{
     flex:1;
 }
@@ -159,8 +151,8 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px;
-    padding: 7px 6px 7px 6px;
+    margin-right: 15px;
+    padding: 2px 6px 2px 6px;
     background-color: darkslateblue;
     align-self: center;
     border-radius: 10px 10px 10px 10px;
@@ -190,49 +182,6 @@ nav ul li:hover a{
     background-color: #182a3f;
 }
 
-/* Add the UV styles
-:root {
-    --uv-styles-color-outline: #3c4043;
-    --uv-styles-color-scrim: #0009;
-    --uv-styles-color-on-scrim: #fff;
-    --uv-styles-color-icon-on-scrim: #fff;
-    --uv-styles-color-primary: #8ab4f8;
-    --uv-styles-color-on-primary: #202124;
-    --uv-styles-color-secondary: #394457;
-    --uv-styles-color-icon-on-secondary: #9aa0a6;
-    --uv-styles-color-on-secondary: #d2e3fc;
-    --uv-styles-color-tertiary: #303134;
-    --uv-styles-color-on-tertiary: #bdc1c6;
-    --uv-styles-color-icon-on-tertiary: #bdc1c6;
-    --uv-styles-color-text-primary: #8ab4f8;
-    --uv-styles-color-text-emphasis: #e8eaed;
-    --uv-styles-color-icon-emphasis: #e8eaed;
-    --uv-styles-color-text-de-emphasis: #9aa0a6;
-    --uv-styles-color-text-default: #bdc1c6;
-    --uv-styles-color-icon-default: #bdc1c6;
-    --uv-styles-color-review-stars: #fdd663;
-    --uv-styles-color-review-stars-empty: #80868b;
-    --uv-styles-color-letterbox: #000;
-    --uv-styles-color-surface: #171717;
-    --uv-styles-color-footer: #171717;
-    --lens-title1-font-size: calc(18/var(--lens-base-font-size, 16)*1rem);
-    --lens-title2-font-size: calc(16/var(--lens-base-font-size, 16)*1rem);
-    --lens-title3-font-size: calc(14/var(--lens-base-font-size, 16)*1rem);
-    --lens-subtitle1-font-size: calc(14/var(--lens-base-font-size, 16)*1rem);
-    --lens-body1-font-size: calc(14/var(--lens-base-font-size, 16)*1rem);
-    color-scheme: dark;
-    font-size: 14px;
-    color: #bdc1c6;
-    --center-width: 652px;
-    --rhs-margin: 76px;
-    --rhs-width: 372px;
-    --lhs-refinements-width: 0px;
-    --lhs-margin: 24px;
-    --lhs-width: calc(var(--center-abs-margin) - var(--lhs-margin) - var(--center-margin));
-    --center-margin: 24px;
-    --center-abs-margin: 28px;
-    font-family: arial,sans-serif;
-} */
 
 /* Estilos específicos para la clase "caja google" */
 .caja.google {
