@@ -2,9 +2,8 @@
 body {
     display: flex;
     flex-direction: column;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     margin: 0;
-    background-image: url(https://media.gettyimages.com/id/667138246/es/foto/argentina-buenos-aires-amanecer-en-el-centro-con-hora-punta.jpg?s=2048x2048&w=gi&k=20&c=mHncRiyTa0eFSXCuf2E6uAO6OcQzwMfNnC0TJYfmjmg=);
 }
 
 footer {
@@ -21,7 +20,7 @@ section {
     flex: 1;
     padding: 1rem;
     padding-top: 5rem;
-    color: whitesmoke;
+    color: black;
 }
 
 #clima-info p {
@@ -81,17 +80,6 @@ section {
     width: 500px;
 }
 
-@media (400px <= width <= 750px) {
-    .carousel{
-        width: 350px;
-    }
-}
-
-@media (width <= 399px) {
-    .carousel{
-        width: 200px;
-    }
-}
 
 /* -------- Estilo Formulario -------- */
 form {
@@ -116,41 +104,7 @@ form input[type="submit"] {
 }
 
 
-
-/* Estilos generales
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    
-}
-/* old
-header, footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-section {
-    padding: 20px;
-} */
-
-
-main{
-    flex:1;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav ul li {
+li {
     margin-right: 15px;
     padding: 2px 6px 2px 6px;
     background-color: darkslateblue;
@@ -159,19 +113,21 @@ nav ul li {
 
 }
 
-nav ul li a {
+
+
+/* nav ul li a {
     text-decoration: none;
     color: white;
 
-}
+} */
 
-nav ul li:hover{
+/* nav ul li:hover{
     background-color: #333;
-}
+} */
 
-nav ul li:hover a{
+/* nav ul li:hover a{
     color:aquamarine;
-}
+} */
 
 /* <-------- Custom CSS styles para la navbar de boostrap --------> */
 .navbar-nav .nav-link.active {
@@ -181,7 +137,6 @@ nav ul li:hover a{
 .navbar {
     background-color: #182a3f;
 }
-
 
 /* Estilos específicos para la clase "caja google" */
 .caja.google {
@@ -208,4 +163,23 @@ nav ul li:hover a{
     --uv-styles-color-letterbox: #000;
     --uv-styles-color-surface: #171717;
     --uv-styles-color-footer: #171717;
+}
+
+/* pantalla media */
+@media (400px <= width <= 991px) {
+    li {
+        display: contents;    
+    }
+    .carousel{
+        width: 350px;
+    }
+}
+/* pantalla chica */
+@media (width <= 399px) {
+    li {
+        display: contents;    
+    }
+    .carousel{
+        width: 200px;
+    }
 }
