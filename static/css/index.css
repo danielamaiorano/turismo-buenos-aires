@@ -1,0 +1,31 @@
+
+  h2 {
+    text-align: center;
+    margin: 1svb;
+    padding: 1svh 0 5svh 0;
+  }
+  img {
+    width: auto;
+    object-fit: cover;
+    max-height: 333px; 
+    min-height: 133px;
+  }
+  section {
+    color: whitesmoke;
+  }
+
+ .titulo p{
+  color: black;
+ }
+
+ @media (max-width: 990px) {
+  img {
+    max-height: 233px; 
+  }
+}
+
+@media (max-width: 400px) {
+  img {
+    max-height: 133px; 
+  }
+} 
